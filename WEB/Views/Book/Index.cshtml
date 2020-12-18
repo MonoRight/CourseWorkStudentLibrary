@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Меню студента";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Переглянути всі книжки", "GetAllBooks", "Book")</li>
+            <li>@Html.ActionLink("Пошук книг", "Search", "Book")</li>
+            <li>@Html.ActionLink("Додати книгу", "CreateBook", "Book")</li>
+        </ul>
+    </div>
+    <hr>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+﻿@model WEB.Models.StudentViewModel
+
+@{
+    ViewBag.Title = "Студент";
+    var Books = ViewBag.Books;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GroupName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GroupName)
+            </dd>
+
+        </dl>
+    </div>
+    <h3 class="alert-info">Обрані книги:</h3>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("Id книги")
+            </th>
+            <th>
+                @Html.DisplayName("Назва")
+            </th>
+            <th>
+                @Html.DisplayName("Автор")
+            </th>
+        </tr>
+
+        @foreach (var item in ViewBag.Books)
+        {
+            <tr>
+                <td>
+                    @item.BookId
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Author
+                </td>
+            </tr>
+        }
+    </table>
+
+    <p>
+        @Html.ActionLink("Змінити", "UpdateStudent", new { id = Model.Id }) |
+        @Html.ActionLink("Назад", "Index", "Student")
+    </p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WEB.Models.StudentBookViewModel>
+
+@{
+    ViewBag.Title = "Список замовлень";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentId)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+            <td>
+                @Html.ActionLink("Змінити замовлення", "UpdateRecording", new { id=item.Id }) |
+                @Html.ActionLink("Деталі", "GetRecordingById", new { id=item.Id }) |
+                @Html.ActionLink("Повернути книгу до бібліотеки", "DeleteRecordingById", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

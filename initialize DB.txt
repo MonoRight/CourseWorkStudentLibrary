@@ -1,0 +1,34 @@
+INSERT INTO dbo.Books(Name, Author) VALUES('The Hunger Games', 'Suzanne Collins');
+INSERT INTO dbo.Books(Name, Author) VALUES('1984', 'George Orwell');
+INSERT INTO dbo.Books(Name, Author) VALUES('The Giver', 'Lois Lowry');
+INSERT INTO dbo.Books(Name, Author) VALUES('Divergent', 'Veronica Roth');
+INSERT INTO dbo.Books(Name, Author) VALUES('Brave New World', 'Aldous Huxley');
+INSERT INTO dbo.Books(Name, Author) VALUES('Fahrenheit 451', 'Ray Bradbury');
+INSERT INTO dbo.Books(Name, Author) VALUES('Animal Farm', 'George Orwell');
+INSERT INTO dbo.Books(Name, Author) VALUES('Lord of the Flies', 'William Golding');
+INSERT INTO dbo.Books(Name, Author) VALUES('The Road', 'Cormac McCarthy');
+INSERT INTO dbo.Books(Name, Author) VALUES('The Maze Runner', 'James Dashner');
+INSERT INTO dbo.Books(Name, Author) VALUES('The Stand', 'Stephen King');
+INSERT INTO dbo.Books(Name, Author) VALUES('V for Vendetta', 'Alan Moore');
+
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Dmytro', 'Parkhomenko', 'IS-83');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Olha', 'Moshchytska', 'IS-83');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Marry', 'Pryidun', 'IS-83');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Max', 'Chekh', 'IS-83');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Dmytro', 'Pupena', 'IS-83');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Olexandr', 'Bodnar', 'IS-81');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Natali', 'Byshovets', 'IS-81');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Olexandra', 'Borshosh', 'IS-82');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Nadi', 'Aidimirova', 'IS-82');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Lilya', 'Chan', 'IS-82');
+INSERT INTO dbo.Students(Name, Surname, GroupName) VALUES('Vika', 'Kubrina', 'IS-83');
+
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(1, 12);
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(2, 3);
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(2, 9);
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(2, 1);
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(2, 6);
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(2, 7);
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(8, 2);
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(8, 10);
+INSERT INTO dbo.StudentBooks(StudentId,BookId) VALUES(11, 4);

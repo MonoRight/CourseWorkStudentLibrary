@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Меню замовлень";
+    int Id = 1;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Переглянути всі записи", "GetAllRecordings", "StudentBook")</li>
+            <li>@Html.ActionLink("Додати запис", "CreateRecording", new { id = Id })</li>
+        </ul>
+    </div>
+    <hr>
+</body>
+</html>
+

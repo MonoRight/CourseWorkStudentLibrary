@@ -1,0 +1,94 @@
+﻿@model WEB.Models.BookViewModel
+
+@{
+    ViewBag.Title = "Книга";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Author)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Author)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Статус")
+            </dt>
+            @if (ViewBag.Student.Name == null)
+            {
+                <dd>
+                    @Html.DisplayName("Наявна")
+                </dd>
+            }
+            @if (ViewBag.Student.Name != null)
+            {
+                <dd>
+                    @Html.DisplayName("Відсутня")
+                </dd>
+            }
+        </dl>
+        @if (ViewBag.Student.Name != null)
+        {
+            <h4 class="btn-group-sm">Студент, який взяв книгу:</h4>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayName("Id студента: ")
+                </dt>
+
+                <dd>
+                    @ViewBag.Student.StudentId
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Ім'я студента:")
+                </dt>
+
+                <dd>
+                    @ViewBag.Student.Name
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Прізвище студента:")
+                </dt>
+
+                <dd>
+                    @ViewBag.Student.Surname
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Група студента:")
+                </dt>
+
+                <dd>
+                    @ViewBag.Student.GroupName
+                </dd>
+            </dl>
+        }
+
+    </div>
+    <p>
+        <br />
+        @Html.ActionLink("Змінити", "UpdateBook", new { id = Model.Id }) |
+        @Html.ActionLink("Назад", "Index", "Book")
+    </p>
+</body>
+</html>

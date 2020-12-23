@@ -5,10 +5,11 @@ namespace WEB.App_Start
 {
     using System;
     using System.Web;
-
+    using BLL.Infrastructure;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
+    using Ninject.Modules;
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
 
@@ -40,6 +41,7 @@ namespace WEB.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
+            var modules = new INinjectModule[] { new ServiceModule("DBConnection") };
             var kernel = new StandardKernel();
             try
             {
@@ -61,6 +63,7 @@ namespace WEB.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            System.Web.Mvc.DependencyResolver.SetResolver(new WEB.Util.NinjectDependencyResolver(kernel));
         }
     }
 }

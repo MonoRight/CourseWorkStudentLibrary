@@ -51,7 +51,7 @@ namespace BLL.Services
         {
             if (BookLimit(studentBookDTO))
             {
-                throw new ValidationException("Ліміт на кількість книг перевищенно! Одночасно студент може мати всього 4 книги!");
+                throw new ValidationException("Ліміт на кількість книг перевищенно! Одночасно студент може мати всього 5 книг!");
             }
             if (BookInLibrary(studentBookDTO))
             {
@@ -62,6 +62,24 @@ namespace BLL.Services
             if (studentBook == null)
             {
                 throw new ValidationException("Замовлення відсутнє з вказаним ID");
+            }
+
+            Student student = Database.Students.Get(studentBookDTO.StudentId);
+            Book book = Database.Books.Get(studentBookDTO.BookId);
+
+            if (student == null && book == null)
+            {
+                throw new ValidationException("Студента та Книги не знайдено в базі!");
+            }
+
+            if (student == null && book != null)
+            {
+                throw new ValidationException("Студента не знайдено в базі!");
+            }
+
+            if (student != null && book == null)
+            {
+                throw new ValidationException("Книги не знайдено в базі!");
             }
 
             studentBook.BookId = studentBookDTO.BookId;
@@ -96,7 +114,17 @@ namespace BLL.Services
 
             if (student == null && book == null)
             {
-                throw new ValidationException("Студента або Книги не знайдено в базі!");
+                throw new ValidationException("Студента та Книги не знайдено в базі!");
+            }
+
+            if (student == null && book != null) 
+            {
+                throw new ValidationException("Студента не знайдено в базі!");
+            }
+
+            if (student != null && book == null)
+            {
+                throw new ValidationException("Книги не знайдено в базі!");
             }
 
             StudentBook studentBook = new StudentBook()

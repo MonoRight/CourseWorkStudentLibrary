@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Запис";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <hr />
+        @if (ViewBag.StudentBook.StudentName != null)
+        {
+            <h4 class="btn-group-sm">Запис:</h4>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayName("Id студента: ")
+                </dt>
+
+                <dd>
+                    @ViewBag.StudentBook.StudentId
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Id книги:")
+                </dt>
+
+                <dd>
+                    @ViewBag.StudentBook.BookId
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Ім'я студента:")
+                </dt>
+
+                <dd>
+                    @ViewBag.StudentBook.StudentName
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Прізвище студента:")
+                </dt>
+
+                <dd>
+                    @ViewBag.StudentBook.Surname
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Назва книги:")
+                </dt>
+
+                <dd>
+                    @ViewBag.StudentBook.BookName
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Автор книги:")
+                </dt>
+
+                <dd>
+                    @ViewBag.StudentBook.Author
+                </dd>
+            </dl>
+        }
+
+    </div>
+    <p>
+        <br />
+        @Html.ActionLink("Назад", "Index", "StudentBook")
+    </p>
+</body>
+</html>
